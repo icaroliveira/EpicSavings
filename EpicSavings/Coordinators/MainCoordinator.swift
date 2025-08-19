@@ -26,11 +26,11 @@ class MainCoordinator: Coordinator {
 
         // --- Configuração da Aba Dashboard ---
         // 1. ViewModel é criada com suas dependências (o repositório).
-        // let dashboardVM = DashboardViewModel(userRepository: userRepository)
+        let dashboardVM = DashboardViewModel(userRepository: userRepository)
         // 2. ViewController é criado com sua dependência (a ViewModel).
-        // let dashboardVC = DashboardViewController(viewModel: dashboardVM)
+        let dashboardVC = DashboardViewController(viewModel: dashboardVM)
         // 3. O item da barra de abas é configurado.
-        let dashboardVC = UIViewController() // Temporário
+        dashboardVC.tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(systemName: "house.fill"), tag: 0)
         dashboardVC.view.backgroundColor = .systemBackground
         dashboardVC.tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(systemName: "house.fill"), tag: 0)
         
