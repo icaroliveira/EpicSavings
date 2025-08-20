@@ -37,15 +37,14 @@ class MainCoordinator: Coordinator {
         // --- Configuração da Aba Missões ---
         // let missionsVM = MissionsViewModel(missionRepository: missionRepository, userRepository: userRepository)
         // let missionsVC = MissionsViewController(viewModel: missionsVM)
-        let missionsVC = UIViewController() // Temporário
-        missionsVC.view.backgroundColor = .systemBackground
+        let missionsVM = MissionsViewModel(missionRepository: missionRepository, userRepository: userRepository)
+        let missionsVC = MissionsViewController(viewModel: missionsVM)
         missionsVC.tabBarItem = UITabBarItem(title: "Missões", image: UIImage(systemName: "checklist"), tag: 1)
-        
         // --- Configuração da Aba Ranking ---
         // let rankingVM = RankingViewModel(rankingRepository: rankingRepository, userRepository: userRepository)
         // let rankingVC = RankingViewController(viewModel: rankingVM)
-        let rankingVC = UIViewController() // Temporário
-        rankingVC.view.backgroundColor = .systemBackground
+        let rankingVM = RankingViewModel(rankingRepository: rankingRepository, userRepository: userRepository)
+        let rankingVC = RankingViewController(viewModel: rankingVM)
         rankingVC.tabBarItem = UITabBarItem(title: "Ranking", image: UIImage(systemName: "rosette"), tag: 2)
 
         // Define a lista de ViewControllers que a TabBar irá gerenciar.
