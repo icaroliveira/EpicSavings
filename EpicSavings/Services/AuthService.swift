@@ -16,7 +16,7 @@ class AuthService {
     private init() {}
     
     // Retorna o usuário atualmente logado, se houver.
-    public func getCurrentUser() -> User? {
+    public func getCurrentUser() -> FirebaseAuth.User? {
         return Auth.auth().currentUser
     }
     
