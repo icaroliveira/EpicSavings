@@ -9,6 +9,7 @@ struct User: Codable {
     // --> ESTA PARTE PROVAVELMENTE ESTÁ FALTANDO <--
     // Propriedade computada: Lógica para calcular o XP necessário para o próximo nível.
     // Ela não armazena um valor, mas calcula um toda vez que é acessada.
+    // Em User.swift
     var xpToNextLevel: Int {
         return 100 * level
     }

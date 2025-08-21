@@ -27,28 +27,29 @@ class MissionsViewModel {
     func loadMissions() {
         self.missions = missionRepository.getMissions()
     }
-    
+
     func completeMission(mission: Mission) {
-        // 1. Verifica se a missão já não foi completada.
         guard !mission.isCompleted else { return }
-        
-        // 2. Marca a missão como completa no repositório.
         missionRepository.completeMission(id: mission.id)
         
-        // 3. Pega os dados atuais do usuário.
         var currentUser = userRepository.getUser()
-        
-        // 4. Adiciona as recompensas.
         currentUser.coins += mission.rewardCoins
         currentUser.xp += mission.rewardXP
         
-        // 5. Salva o usuário atualizado.
+        // 5. --- LÓGICA DE LEVEL UP APRIMORADA ---
+        while currentUser.xp >= currentUser.xpToNextLevel {
+            // Guarda o XP necessário para o nível ATUAL antes de mudá-lo.
+            let xpRequired = currentUser.xpToNextLevel
+            
+            // Aumenta o nível primeiro.
+            currentUser.level += 1
+            
+            // Subtrai o valor que guardamos (COM O "Q" MAIÚSCULO).
+            currentUser.xp -= xpRequired
+        }
+        
         userRepository.saveUser(currentUser)
-        
-        // 6. Recarrega a lista de missões para refletir o estado "completa".
         loadMissions()
-        
-        // 7. Envia uma mensagem de sucesso para a ViewController (para um alerta, por exemplo).
         missionCompletionPublisher.send("Missão Concluída! +\(mission.rewardXP) XP, +\(mission.rewardCoins) Moedas!")
     }
 }
