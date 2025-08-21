@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C0F9D2392E56DAFF00C5CC3F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C0F9D2382E56DAFF00C5CC3F /* FirebaseAnalytics */; };
+		C0F9D23B2E56DAFF00C5CC3F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C0F9D23A2E56DAFF00C5CC3F /* FirebaseAuth */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		C08774472E5279B300E1310F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0F9D2392E56DAFF00C5CC3F /* FirebaseAnalytics in Frameworks */,
+				C0F9D23B2E56DAFF00C5CC3F /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +132,8 @@
 			);
 			name = EpicSavings;
 			packageProductDependencies = (
+				C0F9D2382E56DAFF00C5CC3F /* FirebaseAnalytics */,
+				C0F9D23A2E56DAFF00C5CC3F /* FirebaseAuth */,
 			);
 			productName = EpicSavings;
 			productReference = C08774302E5279B200E1310F /* EpicSavings.app */;
@@ -208,6 +217,9 @@
 			);
 			mainGroup = C08774272E5279B200E1310F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C0F9D2372E56DAFF00C5CC3F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C08774312E5279B200E1310F /* Products */;
 			projectDirPath = "";
@@ -571,6 +583,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C0F9D2372E56DAFF00C5CC3F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C0F9D2382E56DAFF00C5CC3F /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0F9D2372E56DAFF00C5CC3F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		C0F9D23A2E56DAFF00C5CC3F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0F9D2372E56DAFF00C5CC3F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C08774282E5279B200E1310F /* Project object */;
 }
