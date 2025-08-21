@@ -46,9 +46,15 @@ class MainCoordinator: Coordinator {
         let rankingVM = RankingViewModel(rankingRepository: rankingRepository, userRepository: userRepository)
         let rankingVC = RankingViewController(viewModel: rankingVM)
         rankingVC.tabBarItem = UITabBarItem(title: "Ranking", image: UIImage(systemName: "rosette"), tag: 2)
+        
+        
+        // perfil
+        let profileVM = ProfileViewModel(userRepository: userRepository)
+                let profileVC = ProfileViewController(viewModel: profileVM)
+                profileVC.tabBarItem = UITabBarItem(title: "Perfil", image: UIImage(systemName: "person.fill"), tag: 3)
 
         // Define a lista de ViewControllers que a TabBar irá gerenciar.
-        tabBarController.viewControllers = [dashboardVC, missionsVC, rankingVC]
+        tabBarController.viewControllers = [dashboardVC, missionsVC, rankingVC, profileVC]
         tabBarController.tabBar.backgroundColor = .secondarySystemBackground
         
         // Coloca a TabBarController na pilha de navegação para ser exibida.
