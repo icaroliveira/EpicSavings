@@ -48,7 +48,7 @@ class MainCoordinator: Coordinator {
         rankingVC.tabBarItem = UITabBarItem(title: "Ranking", image: UIImage(systemName: "rosette"), tag: 2)
         
         
-        // perfil
+        // --- Configuração da Aba Perfil ---
         let profileVM = ProfileViewModel(userRepository: userRepository)
                 let profileVC = ProfileViewController(viewModel: profileVM)
                 profileVC.tabBarItem = UITabBarItem(title: "Perfil", image: UIImage(systemName: "person.fill"), tag: 3)
