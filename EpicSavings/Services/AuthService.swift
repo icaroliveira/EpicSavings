@@ -7,7 +7,7 @@
 
 import Foundation
 import FirebaseAuth
-
+import GoogleSignIn
 class AuthService {
     
     // Singleton para garantir uma única instância.
@@ -19,6 +19,7 @@ class AuthService {
     public func getCurrentUser() -> FirebaseAuth.User? {
         return Auth.auth().currentUser
     }
+    
     
     // Função para registrar um novo usuário.
     // Usamos @escaping (Result<Bool, Error>) -> Void para retornar o resultado
