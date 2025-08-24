@@ -49,4 +49,9 @@ class AppCoordinator: Coordinator {
     func userDidLogin() {
         showMainApp()
     }
+    
+    func userDidLogout() {
+        // Leva o usuário de volta para a tela de login.
+        showLogin()
+    }
 }

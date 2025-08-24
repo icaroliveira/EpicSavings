@@ -46,4 +46,16 @@ class ProfileViewModel {
         // userRepository.saveUser(defaultUser)
         // self.user = defaultUser
     }
+    // Em ProfileViewModel.swift
+
+    func logout(completion: @escaping () -> Void) {
+        AuthService.shared.logout { error in
+            if let error = error {
+                print("Erro ao fazer logout: \(error.localizedDescription)")
+                return
+            }
+            // Notifica a ViewController que o logout foi concluído.
+            completion()
+        }
+    }
 }
