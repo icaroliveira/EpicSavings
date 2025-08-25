@@ -40,7 +40,7 @@ class AppCoordinator: Coordinator {
     // Mostra a tela principal do App (a TabBar)
     func showMainApp() {
         // Este é o mesmo código que já tínhamos, mas agora está em sua própria função.
-        let mainCoordinator = MainCoordinator(navigationController: navigationController)
+        let mainCoordinator = MainCoordinator(navigationController: navigationController, appCoordinator: self)
         mainCoordinator.start()
     }
     
